@@ -46,6 +46,14 @@ But there is nore efficient linear in time algorithm.
 
 ## Microservices Intro
 
-We are breaking down the application into several mini parts, mini programs called services. Each service performs a specific business task. It turns into a constructor, where each service is a separate block. The failure of one service can happen relatively painlessly for the entire application. Each service has its own API that can be accessed to perform a specific task. This way, services can communicate with each other by making HTTP or gRPC requests. This method is called synchronous communication, where we send a request and wait for a response from the other side.
+## Microservices
+
+Breaking down the application into several mini parts, mini programs called services. Each service performs a specific business task, creating a modular structure where each service is a separate building block. The failure of one service can occur relatively painlessly for the entire application. Each service has its API that can be accessed to perform a specific task. Services can communicate with each other through HTTP or gRPC requests, known as synchronous communication, where a request is sent, and a response is awaited.
+
+In front of all services, an API Gateway is typically placed. It serves as an intermediary, routing user requests not directly to the services but first through itself, handling the routing.
+
+Another communication option is asynchronous communication, where we don't need to wait for a response from the service. Messages are sent to a message broker like RabbitMQ or Kafka, queued there, and then consumed by a service that reads the queue and performs the necessary actions. The sender, in this case, does not wait for a response and continues working.
+
+However, with benefits come challenges. While some complexities decrease, new ones emerge. Now, each service needs to be raised and configured separately, and connecting them becomes crucial. Architecting with intelligence is necessary, especially paying attention to the consistency of data. Since microservices have specific data in their databases or schemas, performing a join with another table is not straightforward; assembling data in pieces like a puzzle must be done at the application logic level. Moreover, this architecture demands a set of DevOps tools. Containerization is needed for convenient, compact, and independent deployment of microservices. Knowing orchestration becomes crucial for flexible management. Understanding CI/CD pipelines is necessary for smooth deployment. Additionally, setting up logging and monitoring is essential to quickly identify problematic areas in case of issues.
 
 
