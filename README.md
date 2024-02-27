@@ -42,5 +42,10 @@ def find_max_window(nums: list[int], k: int) -> float:
 Note that that is 0(n^2)algorithm. 
 But there is nore efficient linear in time algorithm.
 
+---
+
+## Microservices Intro
+
+We are breaking down the application into several mini parts, mini programs called services. Each service performs a specific business task. It turns into a constructor, where each service is a separate block. The failure of one service can happen relatively painlessly for the entire application. Each service has its own API that can be accessed to perform a specific task. This way, services can communicate with each other by making HTTP or gRPC requests. This method is called synchronous communication, where we send a request and wait for a response from the other side.
 
 
