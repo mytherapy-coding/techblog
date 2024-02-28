@@ -57,3 +57,26 @@ Another communication option is asynchronous communication, where we don't need 
 However, with benefits come challenges. While some complexities decrease, new ones emerge. Now, each service needs to be raised and configured separately, and connecting them becomes crucial. Architecting with intelligence is necessary, especially paying attention to the consistency of data. Since microservices have specific data in their databases or schemas, performing a join with another table is not straightforward; assembling data in pieces like a puzzle must be done at the application logic level. Moreover, this architecture demands a set of DevOps tools. Containerization is needed for convenient, compact, and independent deployment of microservices. Knowing orchestration becomes crucial for flexible management. Understanding CI/CD pipelines is necessary for smooth deployment. Additionally, setting up logging and monitoring is essential to quickly identify problematic areas in case of issues.
 
 
+## Testing Automation: Programming in QA
+
+Why is automation so important? You can do something manually once, but what about repeating it the third or tenth time? It becomes clear that you need to save your energy, nerves, and time. And testing is one of those areas where automation can be a great help.
+
+Testers check the new functionality of an application to ensure it works as intended. They also test the old functionality to make sure that the new features haven't broken anything. Programs that create programs - that's what automated testing is. It's a process where developers write special programs or scripts, also called automated tests, that tell the computer what actions to perform to check if everything is working properly. When executed, these tests run dozens or even hundreds of different interaction scenarios with the system we are testing and then report which ones passed successfully and which ones didn't.
+
+So, what do these automated tests specifically do?
+
+For instance, you can test the API - write a program that makes requests to your server with different parameters and compares the responses received from the server with what the program expects.
+
+In short, we take tests that were previously done manually, such as going to a specific page, clicking here and there, and seeing what happens. Now, we make a soulless machine do the same without complaints and much faster. This type of testing is called end-to-end, where we simulate the user's path entirely from the user's perspective.
+
+Now, let's take a look at the tools for automated testing. Let's start with Selenium. It's a whole set of tools used for browser automation. We are interested in Selenium WebDriver, a library that allows connecting to the browser and sending commands to make it do something - click a button, fill in a field, and so on. It retrieves some data as a response, which we use as the test result. To achieve this, you need to write code that describes the sequence of browser actions and the expected result. Selenium supports languages like Java, Ruby, JavaScript, and, of course, Python.
+
+Popular alternatives include Puppeteer, Playwright, Cypress, or Appium, which do similar tasks but for mobile phones. These work well with testing frameworks that simplify test management, such as Pytest for Python or JUnit for Java. In a nutshell, these frameworks provide specific functions for your programming language, making it easy to write and run tests in applications.
+
+Another type of testing is performance testing. Its essence is to assess how the system handles load and whether it crashes when it goes into production. For example, sending a huge number of different requests to the server simultaneously, as if they were real users on Black Friday eager to make a purchase. Tools like Apache JMeter and LoadRunner help with this, where we specify which requests to send and with what intensity, then run the test and observe how the server behaves.
+
+Now that we've automated everything, it would be good to add a couple more useful things. Firstly, integrate tests into the CI/CD pipeline so that they run automatically whenever new functionality is added. Secondly, after the check, it would be nice to create a testing report indicating which tests passed, what failed, what needs attention, and so on. Writing these reports manually is not desirable, so we also automate them. There are many tools for this, such as Allure Report. It supports multiple languages and frameworks and can create beautiful graphs and tables based on test results for better visualization.
+
+First, everything needs to be checked manually, ensure that everything works, write test cases and testing scenarios, and only then proceed to automation. Additionally, some things are better
+
+seen by a human. For example, a computer can tell whether a new button on a website is functional but cannot assess how user-friendly it is to interact with.
