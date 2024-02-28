@@ -1,3 +1,5 @@
+# TechBlog
+
 ## Fun with Infinity
 
 This is how you can define -infinity and +infinity in Python:
@@ -54,6 +56,7 @@ Another communication option is asynchronous communication, where we don't need 
 
 However, with benefits come challenges. While some complexities decrease, new ones emerge. Now, each service needs to be raised and configured separately, and connecting them becomes crucial. Architecting with intelligence is necessary, especially paying attention to the consistency of data. Since microservices have specific data in their databases or schemas, performing a join with another table is not straightforward; assembling data in pieces like a puzzle must be done at the application logic level. Moreover, this architecture demands a set of DevOps tools. Containerization is needed for convenient, compact, and independent deployment of microservices. Knowing orchestration becomes crucial for flexible management. Understanding CI/CD pipelines is necessary for smooth deployment. Additionally, setting up logging and monitoring is essential to quickly identify problematic areas in case of issues.
 
+---
 
 ## Testing Automation: Programming in QA
 
@@ -78,6 +81,8 @@ Now that we've automated everything, it would be good to add a couple more usefu
 First, everything needs to be checked manually, ensure that everything works, write test cases and testing scenarios, and only then proceed to automation. Additionally, some things are better
 
 seen by a human. For example, a computer can tell whether a new button on a website is functional but cannot assess how user-friendly it is to interact with.
+
+---
 
 ## What is an IP address, and can it reveal anything?
 
