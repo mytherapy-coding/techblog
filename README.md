@@ -44,8 +44,6 @@ But there is nore efficient linear in time algorithm.
 
 ---
 
-## Microservices Intro
-
 ## Microservices
 
 Breaking down the application into several mini parts, mini programs called services. Each service performs a specific business task, creating a modular structure where each service is a separate building block. The failure of one service can occur relatively painlessly for the entire application. Each service has its API that can be accessed to perform a specific task. Services can communicate with each other through HTTP or gRPC requests, known as synchronous communication, where a request is sent, and a response is awaited.
