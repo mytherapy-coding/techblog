@@ -78,3 +78,4 @@ Now that we've automated everything, it would be good to add a couple more usefu
 First, everything needs to be checked manually, ensure that everything works, write test cases and testing scenarios, and only then proceed to automation. Additionally, some things are better
 
 seen by a human. For example, a computer can tell whether a new button on a website is functional but cannot assess how user-friendly it is to interact with.
+
