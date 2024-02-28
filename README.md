@@ -79,3 +79,22 @@ First, everything needs to be checked manually, ensure that everything works, wr
 
 seen by a human. For example, a computer can tell whether a new button on a website is functional but cannot assess how user-friendly it is to interact with.
 
+## What is an IP address, and can it reveal anything?
+
+Let's dive into the concept of an IP address. In the IT realm, think of it like addressing an envelope when sending data. If you want to send a request or data, you need to specify the destination (IP address) and the source (your IP address). This is essential for effective communication between devices in a network. For instance, when accessing a website, you send a request to the server's IP, asking for a specific page. The server processes the request and sends back the data to your IP.
+
+Why does an IP address look peculiar?
+
+In the digital world, computers communicate using binary code, represented as zeros and ones. An IP address is essentially a string of 32 zeros in binary. To make it more user-friendly, we convert it to decimal, splitting it into four parts separated by dots. This gives us the familiar IPv4 format with four numbers ranging from 0 to 255. There's also IPv6, using hexadecimal characters and 128 bits, allowing for a vastly increased number of unique addresses.
+
+Differentiating static and dynamic IP addresses:
+
+A static IP remains constant, while a dynamic IP is assigned for a specific period and can change. This is crucial for managing network resources efficiently. Static IPs are useful when devices need a fixed, unchanging address, while dynamic IPs are suitable for temporary connections.
+
+Referring to IP addresses as internal and external:
+
+Given the limited number of IPv4 addresses, Network Address Translation (NAT) comes into play. Port Address Translation (PAT) is a configuration of NAT that allows multiple devices in a local network to share a single external IP address. Each device is identified by a unique port number, adding a layer of security.
+
+Can anything be deduced from an IP address?
+
+Determining specific details from an external IP is challenging because it's shared among numerous devices. Providers, however, can correlate external and internal IPs, maintaining the distinction through unique port assignments. This complexity adds a level of security to the system.
