@@ -103,3 +103,29 @@ Given the limited number of IPv4 addresses, Network Address Translation (NAT) co
 Can anything be deduced from an IP address?
 
 Determining specific details from an external IP is challenging because it's shared among numerous devices. Providers, however, can correlate external and internal IPs, maintaining the distinction through unique port assignments. This complexity adds a level of security to the system.
+
+---
+
+## HTTP or HTTPS - How It Works and What's the Difference?
+
+HTTP:// stands for Hypertext Transfer Protocol, the protocol for transferring hypertext. Why these prefixes of Greek origin? The term "hypertext" referred to a system of text pages with various footnotes and references to each other. The oldest example of literary hypertext is the Bible. Nowadays, hypertext is associated with the internet, and any web page in it is considered hypertext. Click on an image, and you'll be instantly redirected elsewhere. This is called a hyperlink. So, HTTP transfers hypertext with hyperlinks, representing a path to another file on the internet. It does this by establishing a TCP session on port 80.
+
+Through HTTP, you get a page with video, and the page itself is written in Hypertext Markup Language (HTML). HTTP is a client-server protocol. This means you have a client (you, in this case) that wants to get some data (video), and a server where this data is stored. Seeing a video on YouTube, for example, and clicking on it, you send an HTTP request to the YouTube server and get an HTML page with that video in response. You can also access it by knowing its address or URL (Uniform Resource Locator), which translates to a Uniform Resource Identifier.
+
+HTTP consists of a start line, headers, and a message body. The start line specifies the URL, i.e., where to send it, and the request method. For example, requesting a video, you send a GET request. There are other methods like POST, PUT, HEAD, DELETE, and others. The response start line from the server differs from the request. It includes a three-digit status code indicating the processing status of your request. For example, if everything went well, the server returns the 200 OK code, but if the server couldn't find anything based on your request, you get the famous 404 Not Found code. There are a total of 5 types of codes:
+
+1xx - Informational responses about the process of transferring the request.
+2xx - Information about successful transfer.
+3xx - Information about redirection.
+4xx - Client errors, indicating that either what you're looking for is not found, or you're doing it wrong, or you're not allowed here.
+5xx - Server errors, indicating that the server is currently having a hard time.
+
+Moving on. Headers are parameters that define the request or describe the message body. For example, information about the browser being used, language, authorization, and so on. Finally, there's the body - the data you transmit in the request (e.g., text of a comment) or the response you receive from the server (a page with a video).
+
+All this data is transmitted in the open as plain text. This is unsafe. That's why there's an extension to the protocol called HTTPS, where "S" stands for secure.
+
+HTTPS encrypts all data before transmission, making it impossible to read if intercepted. Encryption is provided by SSL and TLS mechanisms. SSL (Secure Socket Layer) works like this: when connecting to a site using SSL, you first ask the site to identify itself. In response, it sends you a copy of the SSL certificate, proving that communication with it is secure. The browser checks it, and if everything is okay, responds to the site that it can be trusted, and encrypted data exchange begins. How does the browser know the certificate is valid? Certificates are issued by certification authorities, and they are not issued to just anyone. They verify the user and their rights to the resource so that the user can be sure the site is genuine. These certification authorities also confirm to the browser that the sent certificate is valid.
+
+The second protocol, TLS (Transport Layer Security), is a newer version of SSL. It also checks the authenticity of the server and encrypts data. Currently, TLS 1.2 and 1.3 are in use.
+
+Search engines lower the ranking of sites without HTTPS in search results, and Google even threatens to stop working with such resources.
