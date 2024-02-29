@@ -1,6 +1,8 @@
 # TechBlog
 
+
 ## Fun with Infinity
+
 
 This is how you can define -infinity and +infinity in Python:
 
@@ -129,3 +131,21 @@ HTTPS encrypts all data before transmission, making it impossible to read if int
 The second protocol, TLS (Transport Layer Security), is a newer version of SSL. It also checks the authenticity of the server and encrypts data. Currently, TLS 1.2 and 1.3 are in use.
 
 Search engines lower the ranking of sites without HTTPS in search results, and Google even threatens to stop working with such resources.
+
+---
+
+## DNS Server - What Is It and How Does It Work?
+
+DNS (Domain Name System)
+
+A practical example from real life is the contacts in your smartphone. For instance, behind the name ALENA are the actual numerical digits of a phone number. However, when searching for a contact, we input the name rather than the phone number. This is essentially what a DNS server does - it simplifies our lives.
+
+Initially, your device checks the browser or operating system cache. If you've visited a site before, the information about it remains locally cached, saving time in subsequent searches.
+
+If the site is new, a request is sent to the resolver DNS server. Typically hosted by the provider, it can be changed using, for example, the quad eights (8.8.8.8). If the resolver doesn't find the address, it sends a request to the root server. This server, located at the top of the DNS hierarchy, is not singular but multiple. To streamline the search, it helps to navigate to the right branch.
+
+Next, you need to contact the relevant top-level or TLD (top-level domain) server. Top-level domains are what comes after the dot, such as com, org, net. There are Generic Top Level Domains (gTLD), like .edu, .com, .ai (related to artificial intelligence), and Country Code Top Level Domains (ccTLD) tied to specific countries like .ru, .us, .uk.
+
+The resolver then directs the query to a lower level - the Authoritative Nameserver, which provides the required address.
+
+Finally, the resolver records the address in the cache to avoid repeating the same chain of requests.
