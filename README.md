@@ -149,3 +149,36 @@ Next, you need to contact the relevant top-level or TLD (top-level domain) serve
 The resolver then directs the query to a lower level - the Authoritative Nameserver, which provides the required address.
 
 Finally, the resolver records the address in the cache to avoid repeating the same chain of requests.
+
+## Exploring Command-Line Tools for DNS and IP Address Retrieval
+
+This Python script uses the `socket` module to retrieve and print all IP addresses associated with the domain name "google.com." The `get_all_ip_addresses` function attempts to obtain the IP addresses using the `gethostbyname_ex` function and prints the results. If an error occurs, such as the domain not being valid, it prints an error message. The main part of the script sets the domain name and calls the function for demonstration purposes.
+
+```py
+
+import socket
+
+def get_all_ip_addresses(domain_name):
+    try:
+        _, _, ip_addresses = socket.gethostbyname_ex(domain_name)
+        print(f"All IP addresses for {domain_name}: {', '.join(ip_addresses)}")
+    except socket.gaierror:
+        print(f"Unable to get IP addresses for {domain_name}")
+
+
+domain_name = "google.com"
+get_all_ip_addresses(domain_name)
+```
+
+If you want to retrieve IP addresses using the command line or terminal, you can use tools like nslookup or dig. Here's how you can do it:
+
+```bash 
+nslookup google.com
+```
+```bash
+dig +short google.com
+```
+```bash 
+host google.com
+```
+
