@@ -150,12 +150,12 @@ The resolver then directs the query to a lower level - the Authoritative Nameser
 
 Finally, the resolver records the address in the cache to avoid repeating the same chain of requests.
 
+---
 ## Exploring Command-Line Tools for DNS and IP Address Retrieval
 
 This Python script uses the `socket` module to retrieve and print all IP addresses associated with the domain name "google.com." The `get_all_ip_addresses` function attempts to obtain the IP addresses using the `gethostbyname_ex` function and prints the results. If an error occurs, such as the domain not being valid, it prints an error message. The main part of the script sets the domain name and calls the function for demonstration purposes.
 
 ```py
-
 import socket
 
 def get_all_ip_addresses(domain_name):
