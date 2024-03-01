@@ -181,4 +181,37 @@ dig +short google.com
 ```bash 
 host google.com
 ```
+---
+## HTTP GET Request
+To execute an HTTP GET request to a specified URL and display the response using Python, you can utilize the following code. If you are in a controlled environment and comprehend the associated risks, you have the option to disregard SSL verification. Nevertheless, it is strongly discouraged for production environments due to security considerations.
 
+```py
+import urllib.request
+import ssl
+
+def send_get_request(url):
+    try:
+        # Create an SSL context that doesn't verify certificates
+        context = ssl.create_default_context()
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
+
+        with urllib.request.urlopen(url, context=context) as response:
+            print("HTTP Status Code:", response.getcode())
+            print("Response:")
+            print(response.read().decode('utf-8'))
+    except urllib.error.URLError as e:
+        print(f"Error: {e}")
+
+url = "https://leetcode.com/"
+send_get_request(url)
+```
+
+If you are seeking an alternative method to access a website without employing Python, you may consider using command-line tools such as curl or wget. These tools are commonly employed for making HTTP requests. Here's an example using curl:
+```bash
+curl -L <your_url>
+```
+or 
+```bash
+wget -qO- "https://example.com/"
+```
