@@ -215,3 +215,37 @@ or
 ```bash
 wget -qO- "https://example.com/"
 ```
+--
+
+## TCP and UDP
+
+A protocol refers to a set of rules or conventions that define how data is transmitted and received between devices on a network. 
+
+Examples of network protocols include:
+
+-Transmission Control Protocol (TCP): Ensures reliable and ordered delivery of data.
+
+-Internet Protocol (IP): Manages the addressing and routing of data packets in a network.
+
+-Hypertext Transfer Protocol (HTTP): Facilitates communication for web browsing.
+
+-File Transfer Protocol (FTP): Defines rules for transferring files between devices.
+
+-Simple Mail Transfer Protocol (SMTP): Governs the sending of emails over a network.
+
+
+TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two different transport layer protocols used for communication over the Internet. 
+
+TCP (Transmission Control Protocol):
+
+-Ensures information is sent correctly, like making sure your friend hears every word when you talk on the phone.
+-Takes a bit more time but is careful to get everything right.
+-Good for things like downloading files or watching videos.
+
+UDP (User Datagram Protocol):
+
+-Sends information quickly, like sending a message without waiting for a response.
+-Doesn't worry too much if some details get lost.
+-Good for fast activities like playing online games or streaming videos.
+
+In summary, TCP is connection-oriented, reliable, and ensures the ordered delivery of data, while UDP is connectionless, less reliable, and prioritizes low-latency communication. The choice between TCP and UDP depends on the specific requirements of the application.
