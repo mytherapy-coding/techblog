@@ -249,3 +249,4 @@ UDP (User Datagram Protocol):
 -Good for fast activities like playing online games or streaming videos.
 
 In summary, TCP is connection-oriented, reliable, and ensures the ordered delivery of data, while UDP is connectionless, less reliable, and prioritizes low-latency communication. The choice between TCP and UDP depends on the specific requirements of the application.
+
