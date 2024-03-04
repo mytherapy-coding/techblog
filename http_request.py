@@ -16,5 +16,5 @@ def send_get_request(url):
         print(f"Error: {e}")
 
 # Example usage with Google's homepage
-url = "https://leetcode.com/"
+url = "http://localhost:1235"
 send_get_request(url)
