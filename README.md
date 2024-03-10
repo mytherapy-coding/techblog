@@ -254,6 +254,12 @@ In summary, TCP is connection-oriented, reliable, and ensures the ordered delive
 
 ## tcp_server.py and tcp_client.py
 
+When tcp_server.py and tcp_client.py are used together, they create a simple client-server communication system using the TCP (Transmission Control Protocol) network protocol.
+
+Let's break down the interactions between tcp_server.py and tcp_client.py
+
+#### tcp_server.py (Server Script)
+
 ```py
 import socket
 
@@ -294,7 +300,31 @@ while True:
         client_socket.close()
 
 ```
+### Initialization:
 
+- The server script creates a TCP socket and binds it to a specified address and port.
+- It starts listening for incoming connections.
+
+
+### Accepting Connections:
+
+- The server enters into a loop, continuously accepting incoming connections.
+- For each accepted connection, the server creates a new socket specifically for that client.
+
+### Handling Data:
+
+- After accepting a connection, the server receives data from the connected client.
+- In the provided example, it prints the received data to the console and sends a fixed response back to the client.
+
+### Connection Closure:
+
+- The server then closes the connection with the current client.
+Repeat:
+
+- The server continues listening for and accepting new connections, repeating the process.
+
+
+#### tcp_client.py (Client Script)
 
 ```py
 import socket
@@ -332,3 +362,33 @@ finally:
     client_socket.close()
 
 ```
+### Initialization:
+
+- The client script creates a TCP socket.
+
+- Connecting to the Server:
+
+- The client connects to the server using the server's IP address and port.
+
+### Sending Data:
+
+- The client sends a message (greeting) to the server.
+
+- Receiving Response:
+
+- The client waits for a response from the server.
+
+### Printing the Response:
+
+- Upon receiving the response, the client prints it to the console.
+
+### Connection Closure:
+
+- The client then closes the connection.
+
+This basic example illustrates a simple one-way communication from the client to the server, with the server responding to each client independently. In more complex scenarios, we might implement bidirectional communication or handle multiple clients concurrently.
+
+
+
+
+
