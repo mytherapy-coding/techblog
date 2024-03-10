@@ -250,3 +250,85 @@ UDP (User Datagram Protocol):
 
 In summary, TCP is connection-oriented, reliable, and ensures the ordered delivery of data, while UDP is connectionless, less reliable, and prioritizes low-latency communication. The choice between TCP and UDP depends on the specific requirements of the application.
 
+--
+
+## tcp_server.py and tcp_client.py
+
+```py
+import socket
+
+# Choose the port
+port = 1235
+
+# Create a socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Bind the socket to an address and port
+server_socket.bind(('0.0.0.0', port))
+
+print(f"Server is listening on port {port}")
+
+# Start listening for incoming connections
+server_socket.listen()
+
+while True:
+    # Accept a connection from a client
+    client_socket, client_address = server_socket.accept()
+    print(f"Accepted connection from {client_address}")
+
+    try:
+        # Receive data from the client
+        data_received = client_socket.recv(1024).decode()
+        print(f"Received request: {data_received}")
+
+        # Send a response back to the client
+        response_message = "I received your message"
+        client_socket.sendall(response_message.encode())
+
+    except Exception as e:
+        # Print any errors
+        print(f"Error: {e}")
+
+    finally:
+        # Close the connection with the current client
+        client_socket.close()
+
+```
+
+
+```py
+import socket
+
+# Replace with the server's IP address and port
+server_ip = "127.0.0.1"
+server_port = 1235
+
+# Create a socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect to the server
+client_socket.connect((server_ip, server_port))
+print(f"Connected to {server_ip}:{server_port}")
+
+# Greeting message
+message_to_send = "hello server!"
+
+try:
+    # Send the message to the server
+    client_socket.sendall(message_to_send.encode())
+
+    # Wait for a response from the server
+    response_message = client_socket.recv(1024).decode()
+
+    # Print the response
+    print(f"I received your message: {response_message}")
+
+except Exception as e:
+    # Print any errors
+    print(f"Error: {e}")
+
+finally:
+    # Close the connection
+    client_socket.close()
+
+```
