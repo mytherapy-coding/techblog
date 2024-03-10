@@ -11,7 +11,7 @@ server_socket.bind(('0.0.0.0', port))
 
 print(f"Server is listening on port {port}")
 
-# Start listening for incoming connections
+# Start listening for incoming connectionsq
 server_socket.listen()
 
 while True:
