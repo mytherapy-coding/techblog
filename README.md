@@ -215,8 +215,7 @@ or
 ```bash
 wget -qO- "https://example.com/"
 ```
---
-
+---
 ## TCP and UDP
 
 A protocol refers to a set of rules or conventions that define how data is transmitted and received between devices on a network. 
@@ -250,8 +249,7 @@ UDP (User Datagram Protocol):
 
 In summary, TCP is connection-oriented, reliable, and ensures the ordered delivery of data, while UDP is connectionless, less reliable, and prioritizes low-latency communication. The choice between TCP and UDP depends on the specific requirements of the application.
 
---
-
+---
 ## tcp_server.py and tcp_client.py
 
 When tcp_server.py and tcp_client.py are used together, they create a simple client-server communication system using the TCP (Transmission Control Protocol) network protocol.
