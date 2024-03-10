@@ -406,3 +406,10 @@ python3 tcp_client.py
 ```
 Ensure that Python 3 is installed on your machine, and you may need to use python instead of python3 based on your Python installation.
 
+---
+## tcp_server.py and browser(http)
+
+```bash
+open -a "Google Chrome" https://finance.yahoo.com/
+```
+
