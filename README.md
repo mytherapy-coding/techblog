@@ -250,6 +250,7 @@ UDP (User Datagram Protocol):
 In summary, TCP is connection-oriented, reliable, and ensures the ordered delivery of data, while UDP is connectionless, less reliable, and prioritizes low-latency communication. The choice between TCP and UDP depends on the specific requirements of the application.
 
 ---
+
 ## tcp_server.py and tcp_client.py
 
 When tcp_server.py and tcp_client.py are used together, they create a simple client-server communication system using the TCP (Transmission Control Protocol) network protocol.
@@ -323,6 +324,8 @@ Repeat:
 
 
 #### tcp_client.py (Client Script)
+
+tcp_client.py script appears to be a basic example of a TCP client in Python. This client script connects to a specified server (IP address and port), sends a greeting message to the server, waits for a response, and then prints the received response. Here's a breakdown of the script:
 
 ```py
 import socket
