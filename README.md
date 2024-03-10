@@ -389,7 +389,20 @@ finally:
 
 This basic example illustrates a simple one-way communication from the client to the server, with the server responding to each client independently. In more complex scenarios, we might implement bidirectional communication or handle multiple clients concurrently.
 
+Here are the shortened commands to run the server and client scripts:
 
+#### Server (tcp_server.py):
 
+```bash
+cd path/to/server-directory
+python3 tcp_server.py
+```
 
+#### Client (tcp_client.py):
+
+```bash
+cd path/to/client-directory
+python3 tcp_client.py
+```
+Ensure that Python 3 is installed on your machine, and you may need to use python instead of python3 based on your Python installation.
 
