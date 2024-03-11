@@ -489,44 +489,43 @@ Binds the server socket to the address '0.0.0.0' (all available network interfac
 print(f"Server is listening on port {port}")
 Prints a message indicating that the server is now listening on the specified port.
 
-python
-Copy code
+```python
 server_socket.listen()
+```
 Starts listening for incoming connections on the specified port.
 
-python
-Copy code
+```python
 while True:
     client_socket, client_address = server_socket.accept()
     print(f"Accepted connection from {client_address}")
+```
 In an infinite loop, the server waits for and accepts incoming connections from clients. For each connection, it prints a message indicating the address of the connecting client.
 
-python
-Copy code
+```python
 try:
     data_received = client_socket.recv(1024).decode()
     print(f"Received request: {data_received}")
-
     response_message = "I received your message"
     client_socket.sendall(response_message.encode())
+```
 Within a try block, the server attempts to receive data from the client (assuming it's a string). It then prints the received data and sends a response message back to the client.
 
-python
-Copy code
+```python
 except Exception as e:
     print(f"Error: {e}")
+```
 In case of an exception (an error during data reception or response), it catches the exception and prints an error message.
 
-python
-Copy code
+```python
 finally:
     client_socket.close()
+```
 In the finally block, it ensures that the connection with the current client is closed, regardless of whether an exception occurred or not.
 
 Running the Server and Browser Interaction:
-bash
-Copy code
+```bash
 open -a "Google Chrome" http://127.0.0.1:1235/
+```
 This command opens Google Chrome and navigates to http://127.0.0.1:1235/. The browser is connecting to the server using the specified IP address (127.0.0.1, which is the local machine) and port (1235).
 
 When the browser connects to this URL, it triggers the server to accept the connection, receive any data (which might be an HTTP request from the browser), send a response back, and then close the connection. The server's logs indicate the connection acceptance and received data.
