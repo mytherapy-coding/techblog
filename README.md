@@ -407,10 +407,6 @@ python3 tcp_client.py
 Ensure that Python 3 is installed on your machine, and you may need to use python instead of python3 based on your Python installation.
 
 ---
-```bash
-open -a "Google Chrome" https://finance.yahoo.com/
-```
----
 ## tcp_server.py and browser(http)
 
 To create a basic client-server connection using HTTP between a browser (client) and a Python TCP server, you can follow these steps. Please note that HTTP is typically built on top of TCP, but for simplicity, we'll use a basic TCP server here. In a real-world scenario, you might use a web framework like Flask or Django for the server side.
@@ -462,7 +458,7 @@ while True:
 open -a "Google Chrome" http://127.0.0.1:1235/
 ```
 
-Sure, let's break down the code and the steps involved:
+Let's break down the code and the steps involved:
 
 #### tcp_server.py (Server Script)
 ```python
