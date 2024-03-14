@@ -450,9 +450,7 @@ while True:
     finally:
         # Close the connection with the current client
         client_socket.close()
-
 ```
-
 
 ```bash
 open -a "Google Chrome" http://127.0.0.1:1235/
