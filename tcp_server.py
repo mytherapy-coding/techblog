@@ -1,37 +1,67 @@
 import socket
 
-# Choose the port
-port = 1235
+def handle_client(client_socket):
+    request = client_socket.recv(1024).decode('utf-8')
+    print(f"Received request:\n{request}")
 
-# Create a socket
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Bind the socket to an address and port
-server_socket.bind(('0.0.0.0', port))
-
-print(f"Server is listening on port {port}")
-
-# Start listening for incoming connectionsq
-server_socket.listen()
-
-while True:
-    # Accept a connection from a client
-    client_socket, client_address = server_socket.accept()
-    print(f"Accepted connection from {client_address}")
-
+    # Extract the requested URL from the request
     try:
-        # Receive data from the client
-        data_received = client_socket.recv(1024).decode()
-        print(f"Received request: {data_received}")
+        url = request.split()[1]
+    except IndexError:
+        url = '/'
 
-        # Send a response back to the client
-        response_message = "I received your message"
-        client_socket.sendall(response_message.encode())
+    # Define response content based on requested URL
+    if url == '/':
+        # Home page content
+        response_content = (
+            "HTTP/1.1 200 OK\n"
+            "Content-Type: text/html\n\n"
+            "<html><body>"
+            "<h1>Welcome to the Home Page</h1>"
+            "<p>This is the home page.</p>"
+            "<p><a href='/about'>About</a></p>"
+            "</body></html>"
+        )
+    elif url == '/about':
+        # About page content
+        response_content = (
+            "HTTP/1.1 200 OK\n"
+            "Content-Type: text/html\n\n"
+            "<html><body>"
+            "<h1>About Us</h1>"
+            "<p>This is the about page.</p>"
+            "<p><a href='/'>Home</a></p>"
+            "</body></html>"
+        )
+    else:
+        # Page not found
+        response_content = (
+            "HTTP/1.1 404 Not Found\n"
+            "Content-Type: text/html\n\n"
+            "<html><body>"
+            "<h1>404 Not Found</h1>"
+            "<p>The requested page was not found.</p>"
+            "</body></html>"
+        )
 
-    except Exception as e:
-        # Print any errors
-        print(f"Error: {e}")
+    # Send the response
+    client_socket.send(response_content.encode('utf-8'))
 
-    finally:
-        # Close the connection with the current client
-        client_socket.close()
+    # Close the connection with the client
+    client_socket.close()
+
+def run_server():
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = ('localhost', 1235)
+    server_socket.bind(server_address)
+    server_socket.listen(1)
+    print(f"Server is listening on {server_address}")
+
+    while True:
+        print("Waiting for a connection...")
+        client_socket, client_address = server_socket.accept()
+        print(f"Accepted connection from {client_address}")
+        handle_client(client_socket)
+
+if __name__ == "__main__":
+    run_server()
